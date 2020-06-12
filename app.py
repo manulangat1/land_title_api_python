@@ -1,4 +1,4 @@
-from flask import Flask,request,jsonify
+from flask import Flask,request,jsonify,render_template
 # from twilio.
 import requests
 import json 
@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return "hello world"
+    return render_template('index.html')
 
 @app.route('/login/',methods=["POST"])
 def login():
